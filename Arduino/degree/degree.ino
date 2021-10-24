@@ -1,5 +1,19 @@
+/**********************************************
+*   pose estimation program w/ M5StickC
+*   for JPHacks2021
+***********************************************
+*   using FirebaseRTDB, M5StickC
+**********************************************/
+
 #include <M5StickC.h>
 #include <Kalman.h>
+#include <FirebaseESP32.h>
+
+#define FIREBASE_HOST "hogehoge"
+#define FIREBASE_AUTH "hogehogehoge"
+#define WIFI_SSID "hogehogeeeee"
+#define WIFI_PASSWORD "hogehogehogeeeee"
+
 
 // vals
 float acc[3];
@@ -14,11 +28,36 @@ long tick = 0;
 
 Kalman kalmanX;
 Kalman kalmanY;
+FirebaseData fbd;
+
 
 void setup() {
   // init
   M5.begin();
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
+
+  // connect to WiFi
+  int cursor = 0;
+  M5.Lcd.print("Connecting to Wi-Fi");
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    M5.Lcd.setCursor(0 + 5 * cursor, 30);
+    M5.Lcd.print(".");
+    delay(300);
+    cursor++;
+    if (cursor > 320)
+    {
+      cursor = 0;
+    }
+  }
+  M5.Lcd.print("Connected with IP:");
+  M5.Lcd.print(WiFi.localIP());
+  delay(500);
+  M5.Lcd.fillScreen(BLACK);
+
+
+  // LCD init
   M5.Lcd.setRotation(3);
   M5.Lcd.fillScreen(BLACK);
   M5.Lcd.setTextSize(1);
@@ -31,22 +70,31 @@ void setup() {
   kalmanX.setAngle(getRoll());
   kalmanY.setAngle(getPitch());
   lastMs = micros();
+
+
+  // firebase init
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
+  Firebase.reconnectWiFi(true);
 }
 
 void loop() {
   readGyro();
+
   float dt = (micros() - lastMs) / 1000000.0;
   lastMs = micros();
   float roll = getRoll();
   float pitch = getPitch();
 
+  // get angle
   kalAngleX = kalmanX.getAngle(roll, gyro[0], dt);
   kalAngleY = kalmanY.getAngle(pitch, gyro[1], dt);
+
 
   // draw
   tick++;
   if(tick % 20 == 0){
     tick = 0;
+    Firebase.setFloat(fbd, "/pose/", kalAngleX);
     draw();
   }
 
