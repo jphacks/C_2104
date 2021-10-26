@@ -1,0 +1,37 @@
+{
+  "project_info": {
+    "project_number": "214819618897",
+    "firebase_url": "https://jphacks-b4cdb-default-rtdb.firebaseio.com",
+    "project_id": "jphacks-b4cdb",
+    "storage_bucket": "jphacks-b4cdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214819618897:ios:e2073b7d802df5c05ff870",
+        "android_client_info": {
+          "package_name": "payday.jp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214819618897-1rpnikk6jmt77d8cbaptn1s92d69706n.apps.googleusercontent.com"
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzmNQJoFWQ9g5RvMrVokIg5RAro-13KYs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
