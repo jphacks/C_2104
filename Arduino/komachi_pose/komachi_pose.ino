@@ -1,6 +1,10 @@
 #include <M5Atom.h>
 #include <ESP32Servo.h>
 
+// SG-90, SG-92R params
+#define MIN_PLS 500
+#define MAX_PLS 2400
+
 
 // servo settings
 Servo servo;
@@ -23,7 +27,7 @@ void setup() {
 
   // servo init
   servo.setPeriodHertz(50);
-  //servo..attach(servo1Pin, minUs, maxUs);     // TODO: chose servo motor & set the params
+  servo.attach(servoPin, MIN_PLS, MAX_PLS);
 }
 
 void loop() {
