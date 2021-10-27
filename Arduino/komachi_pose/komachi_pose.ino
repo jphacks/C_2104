@@ -12,8 +12,18 @@ int pos = 0;
 
 
 void setup() {
-  // put your setup code here, to run once:
+  // allow allocation of all timers
+  ESP32PWM::allocateTimer(0);
+  ESP32PWM::allocateTimer(1);
+  ESP32PWM::allocateTimer(2);
+  ESP32PWM::allocateTimer(3);
 
+  // M5 init
+  M5.begin();
+
+  // servo init
+  servo.setPeriodHertz(50);
+  //servo..attach(servo1Pin, minUs, maxUs);     // TODO: chose servo motor & set the params
 }
 
 void loop() {
