@@ -31,8 +31,10 @@
 * 
 
 #### フレームワーク・ライブラリ・モジュール
-* 
-* 
+* [Unity](https://unity.com/ja)  
+* Visual C#
+* blender
+* Firebase
 
 #### デバイス
 * 
