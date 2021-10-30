@@ -1,6 +1,6 @@
 # シセイ小町
 
-[![youtube "Sisei Komachi"](image/readme_jp.png)](https://youtu.be/sVC459LxKEE)
+[![youtube "Sisei Komachi"](image/readme_jp.png)](https://youtu.be/CyFyCtdvJZE)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
