@@ -1,6 +1,6 @@
 # シセイ小町
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2021/07/JPHACKS2021_ogp.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)
+[![youtube "Sisei Komachi"](https://jphacks.com/wp-content/uploads/2021/07/JPHACKS2021_ogp.jpg)](https://youtu.be/sVC459LxKEE)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
