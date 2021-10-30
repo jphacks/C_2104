@@ -30,6 +30,7 @@
 * 3Dモデルと人形の二つを用意することで、PC作業中に限らず姿勢を気にすることができます
 
 ## 開発技術
+![System_structure](image/System_structure.png)
 ### 活用した技術
 #### API・データ
 * [ミライ小町 blenderデータ](https://github.com/Miraikomachi)
