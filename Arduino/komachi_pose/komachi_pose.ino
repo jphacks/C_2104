@@ -1,3 +1,10 @@
+/**********************************************
+*   neck moving program w/ M5Atom Lite
+*   for JPHacks2021
+***********************************************
+*   using FirebaseRTDB, M5Atom
+**********************************************/
+
 #include <M5Atom.h>
 #include <ESP32Servo.h>
 
@@ -57,7 +64,7 @@ void setup() {
   M5.dis.drawpix(0, 0x0000f0);        // BLUE(ready)
   servo.write(0);
   delay(1);
-  
+
 }
 
 void loop() {
